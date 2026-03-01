@@ -135,7 +135,7 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent, imageFile: File | null) => {
     e.preventDefault();
-    if (!newPost.trim()) return;
+    if (!newPost.trim() || !user) return;
 
     setUploading(true);
 
@@ -169,7 +169,6 @@ export default function Home() {
       }
 
       setNewPost("");
-      if (!user) return;
       fetchPosts(user.id);
     } catch (error) {
       console.error("Error creating post:", error);
