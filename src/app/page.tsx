@@ -169,6 +169,7 @@ export default function Home() {
       }
 
       setNewPost("");
+      if (!user) return;
       fetchPosts(user.id);
     } catch (error) {
       console.error("Error creating post:", error);
