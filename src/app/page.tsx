@@ -300,7 +300,7 @@ export default function Home() {
               <PostCard
                 key={post.id}
                 post={post}
-                onDelete={handleDelete}
+                onDelete={post.userId === user?.id ? handleDelete : undefined}
                 onLike={handleLike}
                 isAnimating={animatingId === post.id}
               />
